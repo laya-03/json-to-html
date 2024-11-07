@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to HTML Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>JSON to HTML Table</h1>
+    <div id="table-container"></div>
+
+    <!-- Link your JS file -->
+    <script type="module" src="jason2html.js"></script> 
+    <script type="module">
+
+        import json2html from './jason2html.js'; 
+
+        const jsonData = [
+            { "name": "Laya", "age": 21, "email": "mahilaya200@gmail.com" },
+            { "name": "Keyura", "age": 20, "email": "keyura@gmail.com" },
+            { "name": "Mahitha", "email": "abc@example.com" }
+        ];
+
+      
+        const tableHTML = json2html(jsonData);
+
+        document.getElementById('table-container').innerHTML = tableHTML;
+    </script>
+</body>
+</html>
